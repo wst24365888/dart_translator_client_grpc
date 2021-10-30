@@ -8,3 +8,6 @@ compile_proto:
 
 install_reqs:
 	dart pub global activate protoc_plugin
+
+run:
+	@dart ./bin/client.dart
