@@ -13,17 +13,20 @@ TranslateRequest _getRequest() {
     // Because of the auto-generated setter, we can only set non-nullable String.
     request.sourceContent = sourceContent;
   }
-  print("Input target lang:");
-  final String? targetLang = stdin.readLineSync(encoding: utf8);
-  if (targetLang != null) {
-    // Because of the auto-generated setter, we can only set non-nullable String.
-    request.targetLang = targetLang;
-  }
-  print("Input source lang (optional):");
+
+  print(
+      "Input source language (optional, but helped translation process a lot):");
   final String? sourceLang = stdin.readLineSync(encoding: utf8);
   if (sourceLang != null) {
     // Because of the auto-generated setter, we can only set non-nullable String.
     request.sourceLang = sourceLang;
+  }
+
+  print("Input target language:");
+  final String? targetLang = stdin.readLineSync(encoding: utf8);
+  if (targetLang != null) {
+    // Because of the auto-generated setter, we can only set non-nullable String.
+    request.targetLang = targetLang;
   }
 
   return request;
@@ -44,7 +47,7 @@ Future<void> main(List<String> args) async {
   final TranslateRequest request = _getRequest();
 
   try {
-    final response = await stub.translate(
+    final TranslateReply response = await stub.translate(
       request,
       options: CallOptions(compression: const GzipCodec()),
     );

@@ -16,7 +16,7 @@ export 'translator.pb.dart';
 class TranslatorClient extends $grpc.Client {
   static final _$translate =
       $grpc.ClientMethod<$0.TranslateRequest, $0.TranslateReply>(
-          '/dart_translator_client_grpc.Translator/Translate',
+          '/translator_grpc.Translator/Translate',
           ($0.TranslateRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.TranslateReply.fromBuffer(value));
 
@@ -32,7 +32,7 @@ class TranslatorClient extends $grpc.Client {
 }
 
 abstract class TranslatorServiceBase extends $grpc.Service {
-  $core.String get $name => 'dart_translator_client_grpc.Translator';
+  $core.String get $name => 'translator_grpc.Translator';
 
   TranslatorServiceBase() {
     $addMethod($grpc.ServiceMethod<$0.TranslateRequest, $0.TranslateReply>(

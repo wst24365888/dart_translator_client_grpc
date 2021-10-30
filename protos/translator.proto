@@ -1,11 +1,11 @@
 syntax = "proto3";
 
 option java_multiple_files = true;
-option java_package = "com.xyphuz.dart_translator_client_grpc";
-option java_outer_classname = "DartTranslatorClientGRPC";
-option objc_class_prefix = "DTCG";
+option java_package = "com.xyphuz.translator_grpc";
+option java_outer_classname = "TranslatorGRPC";
+option objc_class_prefix = "CXTG";
 
-package dart_translator_client_grpc;
+package translator_grpc;
 
 service Translator {
   rpc Translate (TranslateRequest) returns (TranslateReply) {}
